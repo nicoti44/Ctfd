@@ -36,7 +36,7 @@ FLAG_CLASSES = {"static": CTFdStaticFlag, "regex": CTFdRegexFlag}
 def load(app):
     @app.route('/test', methods=['GET'])
     def view_faq():
-        return render_template('static/page.html', content="<h1>COUCOU NICOLAS VOILA UN BOUTON</h1><button onclick=\"alert('jui un haxer')\">eho ami</button>")
+        return render_template('static/page.html', content="<h1>COUCOU NICOLAS VOILA UN BOUTON</h1><button>eho ami</button>")
 
 
 
