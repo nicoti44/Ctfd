@@ -116,6 +116,17 @@ const displayChal = chal => {
         .then(markSolves);
     });
 
+    $("#fdp").click(function(event) {
+      event.preventDefault();
+      // $("#challenge-submit").addClass("disabled-button");
+      // $("#challenge-submit").prop("disabled", true);
+      CTFd._internal.challenge
+        .start_vm()
+        // .then(renderSubmissionResponse)
+        // .then(loadChals)
+        // .then(markSolves);
+    });
+
     $("#challenge-input").keyup(event => {
       if (event.keyCode == 13) {
         $("#challenge-submit").click();

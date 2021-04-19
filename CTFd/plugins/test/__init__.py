@@ -1,5 +1,5 @@
 import re
-
+import os
 from CTFd.plugins import register_plugin_assets_directory
 from flask import render_template
 
@@ -24,6 +24,9 @@ class CTFdTest(BaseTest):
         "update": "/plugins/test/static/edit.html",
         "view": "/plugins/test/page.html",
     }
+    scripts = {  # Scripts that are loaded when a template is loaded
+        'page': '/plugins/challenges/assets/view.js',
+    }
 
     @staticmethod
     def test():
@@ -36,8 +39,15 @@ TEST_CLASSES = {"test": CTFdTest}
 def load(app):
     @app.route('/test', methods=['GET'])
     def view_faq():
-        return render_template('page.html', content="<h1>COUCOU NICOLAS VOILA UN BOUTON</h1><button>eho ami</button>")
+        return render_template('page.html',
+                               content="<h1>COUCOU NICOLAS VOILA UN BOUTON</h1><button id=\"fdp\">eho ami</button>")
 
-
+    @app.route('/start-vm', methods=['POST'])
+    def start_vm():
+        print('eho server side')
+        print('ICI FAIRE DU POWERSHELL')
+        # os.system('powershell')
+        # os.system('KDKdpz')
+        return True
 
         register_plugin_assets_directory(app, base_path="/plugins/test/static/")

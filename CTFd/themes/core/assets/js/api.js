@@ -323,6 +323,37 @@ let API = (function() {
 
     return deferred.promise;
   };
+
+  API.prototype.start_vm = function(parameters) {
+    if (parameters === undefined) {
+      parameters = {};
+    }
+    let deferred = Q.defer();
+    let domain = this.domain,
+      path = "/start-vm";
+    let body = {},
+      queryParameters = {},
+      headers = {},
+      form = {};
+
+    headers["Accept"] = ["application/json"];
+    headers["Content-Type"] = ["application/json"];
+
+    queryParameters = mergeQueryParams(parameters, queryParameters);
+
+    this.request(
+      "POST",
+      domain + path,
+      parameters,
+      body,
+      headers,
+      queryParameters,
+      form,
+      deferred
+    );
+
+    return deferred.promise;
+  };
   /**
    *
    * @method
