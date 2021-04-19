@@ -28,6 +28,12 @@
 							{{ challenge.value }}
 						</h3>
 
+						{% if  challenge.name == "ExoLinux" %}
+						<button id="ntmNicolas" class="challenge-submit" type="submit">
+							Lancer la vm
+						</button>
+						{% endif %}
+
 						<div class="challenge-tags text-center">
 							{% block tags %}
 								{% for tag in tags %}
