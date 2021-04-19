@@ -36,8 +36,8 @@ TEST_CLASSES = {"test": CTFdTest}
 def load(app):
     @app.route('/test', methods=['GET'])
     def view_faq():
-        return render_template('static/page.html', content="<h1>COUCOU NICOLAS VOILA UN BOUTON</h1><button>eho ami</button>")
+        return render_template('page.html', content="<h1>COUCOU NICOLAS VOILA UN BOUTON</h1><button>eho ami</button>")
 
 
 
-        register_plugin_assets_directory(app, base_path="/plugins/flags/static/")
+        register_plugin_assets_directory(app, base_path="/plugins/test/static/")
