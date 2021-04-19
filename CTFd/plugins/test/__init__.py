@@ -17,7 +17,7 @@ class BaseTest(object):
         return True
 
 
-class CTFdTest(BaseFlag):
+class CTFdTest(BaseTest):
     name = "test"
     templates = {  # Nunjucks templates used for key editing & viewing
         "create": "/plugins/test/static/create.html",
@@ -30,7 +30,7 @@ class CTFdTest(BaseFlag):
         return "On est la"
 
 
-FLAG_CLASSES = {"static": CTFdStaticFlag, "regex": CTFdRegexFlag}
+TEST_CLASSES = {"test": CTFdTest}
 
 
 def load(app):
