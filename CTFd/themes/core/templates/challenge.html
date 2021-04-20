@@ -34,18 +34,6 @@
 						</button>
 						{% endif %}
 
-						{% if  challenge.name == "Reverse Shell" %}
-						<button id="clc" class="challenge-submit" type="submit">
-							Lancer la vm
-						</button>
-						{% endif %}
-
-						{% if  challenge.name == "Man in the middle" %}
-						<button id="ntm" class="challenge-submit" type="submit">
-							Lancer la vm
-						</button>
-						{% endif %}
-
 						<div class="challenge-tags text-center">
 							{% block tags %}
 								{% for tag in tags %}
