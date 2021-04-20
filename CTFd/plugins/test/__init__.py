@@ -37,6 +37,7 @@ def load(app):
     #def view_faq():
      #   return render_template('page.html',
       #                         content="{% extends \"challenge.html\" %}<h1>COUCOU NICOLAS VOILA UN BOUTON</h1><button id=\"fdp\">eho ami</button>")
+    register_plugin_assets_directory(app, base_path="/plugins/test/static/")
 
     @app.route('/start-vm', methods=['POST'])
     def start_vm():
@@ -46,4 +47,3 @@ def load(app):
         # os.system('KDKdpz')
         return True
 
-        register_plugin_assets_directory(app, base_path="/plugins/test/static/")
